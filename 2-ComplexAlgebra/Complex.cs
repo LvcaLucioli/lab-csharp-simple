@@ -48,9 +48,10 @@ namespace ComplexAlgebra
         }
 
         public double Modulus => Math.Sqrt(Math.Pow(Real, 2) + Math.Pow(Imaginary, 2));
-
         public Complex Add(Complex number) => new Complex(this.Real + number.Real, this.Imaginary + number.Imaginary);
         public Complex Subtract(Complex number) => new Complex(this.Real - number.Real, this.Imaginary - number.Imaginary);
 
+        // conjugate
+        public Complex Conjugate => new Complex(Real, -Imaginary);
     }
 }
