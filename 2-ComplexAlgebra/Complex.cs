@@ -45,8 +45,8 @@ namespace ComplexAlgebra
         public override string ToString()
         {
             if (Imaginary == 0.0) return Real.ToString();
-            string imaginaryValue = (Imaginary < 0d) ? "-" : "+" + Math.Abs(Imaginary).ToString() + "i";
-            if(Real == 0)    return imaginaryValue;
+            string imaginaryValue = ((Imaginary < 0d) ? "-" : "+") + ((Math.Abs(Imaginary) == 1d) ? "" : Math.Abs(Imaginary).ToString()) + "i";
+            if (Real == 0)    return imaginaryValue;
             return Real.ToString() + imaginaryValue;
         }
         public double Modulus => Math.Sqrt(Math.Pow(Real, 2) + Math.Pow(Imaginary, 2));
