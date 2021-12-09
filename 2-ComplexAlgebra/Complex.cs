@@ -23,23 +23,23 @@ namespace ComplexAlgebra
 
         public Complex(double realPart, double imaginaryPart)
         {
-            this.RealPart = realPart;
-            this.ImaginaryPart = imaginaryPart;
+            this.Real = realPart;
+            this.Imaginary = imaginaryPart;
         }
         
-        public double RealPart { get; }
-        public double ImaginaryPart { get; }
+        public double Real { get; }
+        public double Imaginary { get; }
 
         public override bool Equals(object obj)
         {
             return obj is Complex complex &&
-                   RealPart == complex.RealPart &&
-                   ImaginaryPart == complex.ImaginaryPart;
+                   Real == complex.Real&&
+                   Imaginary== complex.Imaginary;
         }
 
         public override int GetHashCode()
         {
-            return HashCode.Combine(RealPart, ImaginaryPart);
+            return HashCode.Combine(Real, Imaginary);
         }
 
         public override string ToString()
