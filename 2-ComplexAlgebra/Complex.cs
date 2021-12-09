@@ -1,3 +1,5 @@
+using System;
+
 namespace ComplexAlgebra
 {
     /// <summary>
@@ -18,5 +20,31 @@ namespace ComplexAlgebra
     public class Complex
     {
         // TODO: fill this class\
+
+        public Complex(double realPart, double imaginaryPart)
+        {
+            this.RealPart = realPart;
+            this.ImaginaryPart = imaginaryPart;
+        }
+        
+        public double RealPart { get; }
+        public double ImaginaryPart { get; }
+
+        public override bool Equals(object obj)
+        {
+            return obj is Complex complex &&
+                   RealPart == complex.RealPart &&
+                   ImaginaryPart == complex.ImaginaryPart;
+        }
+
+        public override int GetHashCode()
+        {
+            return HashCode.Combine(RealPart, ImaginaryPart);
+        }
+
+        public override string ToString()
+        {
+            return base.ToString();
+        }
     }
 }
