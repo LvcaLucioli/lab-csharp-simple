@@ -50,10 +50,10 @@ namespace ComplexAlgebra
             return Real.ToString() + imaginaryValue;
         }
         public double Modulus => Math.Sqrt(Math.Pow(Real, 2) + Math.Pow(Imaginary, 2));
+        public double Phase => Math.Atan2(Imaginary, Real);
+        public Complex Complement() => new Complex(Real, -Imaginary);
         public Complex Plus(Complex number) => new Complex(this.Real + number.Real, this.Imaginary + number.Imaginary);
         public Complex Minus(Complex number) => new Complex(this.Real - number.Real, this.Imaginary - number.Imaginary);
 
-        // conjugate
-        public Complex Complement => new Complex(Real, -Imaginary);
     }
 }
