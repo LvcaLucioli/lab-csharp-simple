@@ -46,5 +46,7 @@ namespace ComplexAlgebra
         {
             return base.ToString();
         }
+
+        public double GetModulus => Math.Sqrt(Math.Pow(Real, 2) + Math.Pow(Imaginary, 2));
     }
 }
