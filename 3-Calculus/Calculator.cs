@@ -44,6 +44,24 @@ namespace Calculus
             }
         }
 
+        private char? SelectedOperation
+        {
+            get => _selectedOperation;
+            set
+            {
+                if(value != _selectedOperation)
+                {
+                    if (_firstOperand != null)
+                    {
+                        GetResult();
+                    }
+                    _selectedOperation = value;
+                    _firstOperand = ShownValue;
+                    ShownValue = null; // reset
+                }
+            }
+        } 
+
         public void ResetAll()
         {
             _selectedOperation = null;
