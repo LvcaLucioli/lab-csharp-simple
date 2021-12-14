@@ -62,7 +62,21 @@ namespace Arrays
         /// <seealso cref="Examples.BubbleSort"/>
         public static Complex[] SortByPhase(Complex[] array)
         {
-            return null; // TODO: remove this line
+            Complex[] sortedArray = Clone(array);
+            Complex temp = null;
+            for (int j = 0; j <= sortedArray.Length - 2; j++)
+            {
+                for (int i = 0; i <= sortedArray.Length - 2; i++)
+                {
+                    if (sortedArray[i].Phase > sortedArray[i + 1].Phase)
+                    {
+                        temp = sortedArray[i + 1];
+                        sortedArray[i + 1] = sortedArray[i];
+                        sortedArray[i] = temp;
+                    }
+                }
+            }
+            return sortedArray;
         }
         
         /// <summary>
