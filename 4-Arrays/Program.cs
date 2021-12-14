@@ -19,10 +19,10 @@ namespace Arrays
         /// <seealso cref="Examples.Max"/>
         public static Complex MaxModulus(Complex[] array)
         {
-            Complex maxModulus = array[array.Length-1];
-            foreach(Complex number in array)
+            Complex maxModulus = array[array.Length - 1];
+            foreach (Complex number in array)
             {
-                if(maxModulus.Modulus < number.Modulus)
+                if (maxModulus.Modulus < number.Modulus)
                 {
                     maxModulus = number;
                 }
@@ -78,7 +78,7 @@ namespace Arrays
             }
             return sortedArray;
         }
-        
+
         /// <summary>
         /// Creates a representation of the provided array of <see cref="Complex"/> as a string.
         /// Items of <paramref name="array"/> are represented via their <see cref="Complex.ToString"/> method.
@@ -92,13 +92,13 @@ namespace Arrays
         public static string ArrayToString(Complex[] array)
         {
             string finalString = "{";
-            foreach(Complex number in array)
+            foreach (Complex number in array)
             {
                 finalString += "[" + number.ToString() + "];";
             }
             return finalString + "}"; // TODO: remove this line
         }
-        
+
         /// <summary>
         /// Test method for the aforementioned array algorithms
         /// </summary>
@@ -106,38 +106,38 @@ namespace Arrays
         /// TODO: uncomment the commented code, if any
         static void Main(string[] args)
         {
-            // Complex[] numbers = new[] {
-            //     new Complex(0, 0),
-            //     new Complex(1, 1),
-            //     new Complex(0, 1), 
-            //     new Complex(-2, 2),
-            //     new Complex(-3, 0),
-            //     new Complex(-2, -2),
-            //     new Complex(0, -4),
-            //     new Complex(1, -1),
-            //     new Complex(1, 0)
-            // }; 
-            //
-            // Complex[] orderedByPhase = new[] {
-            //     new Complex(-2, -2),
-            //     new Complex(0, -4),
-            //     new Complex(1, -1),
-            //     new Complex(0, 0),
-            //     new Complex(1, 0),
-            //     new Complex(1, 1),
-            //     new Complex(0, 1),
-            //     new Complex(-2, 2),
-            //     new Complex(-3, 0)
-            // };
-            //
-            // var cloned = numbers;
-            //
-            // ArraysAreEqual(cloned, numbers);
-            // ArraysAreEqual(SortByPhase(numbers), orderedByPhase);
-            // ArraysAreEqual(numbers, cloned);
-            // CheckComplexNumber(MaxModulus(numbers), new Complex(0, -4));
-            // CheckComplexNumber(MaxModulus(orderedByPhase), new Complex(0, -4));
-            // CheckComplexNumber(MaxModulus(cloned), new Complex(0, -4));
+            Complex[] numbers = new[] {
+                 new Complex(0, 0),
+                 new Complex(1, 1),
+                 new Complex(0, 1),
+                 new Complex(-2, 2),
+                 new Complex(-3, 0),
+                 new Complex(-2, -2),
+                 new Complex(0, -4),
+                 new Complex(1, -1),
+                 new Complex(1, 0)
+             };
+
+            Complex[] orderedByPhase = new[] {
+            new Complex(-2, -2),
+                 new Complex(0, -4),
+                 new Complex(1, -1),
+                 new Complex(0, 0),
+                 new Complex(1, 0),
+                 new Complex(1, 1),
+                 new Complex(0, 1),
+                 new Complex(-2, 2),
+                 new Complex(-3, 0)
+             };
+
+            var cloned = numbers;
+
+            ArraysAreEqual(cloned, numbers);
+            ArraysAreEqual(SortByPhase(numbers), orderedByPhase);
+            ArraysAreEqual(numbers, cloned);
+            CheckComplexNumber(MaxModulus(numbers), new Complex(0, -4));
+            CheckComplexNumber(MaxModulus(orderedByPhase), new Complex(0, -4));
+            CheckComplexNumber(MaxModulus(cloned), new Complex(0, -4));
         }
 
         /// <summary>
@@ -167,7 +167,7 @@ namespace Arrays
             }
             Console.WriteLine($"Array {ArrayToString(actual)} is ok");
         }
-        
+
         /// <summary>
         /// Checks whether the <paramref name="actual"/> <see cref="Complex"/> number is equal to the
         /// <paramref name="expected"/> one (via the <see cref="Complex.Equals(object)"/> method).
