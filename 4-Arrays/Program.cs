@@ -19,7 +19,15 @@ namespace Arrays
         /// <seealso cref="Examples.Max"/>
         public static Complex MaxModulus(Complex[] array)
         {
-            return null; // TODO: remove this line
+            Complex maxModulus = array[array.Length-1];
+            foreach(Complex number in array)
+            {
+                if(maxModulus.Modulus < number.Modulus)
+                {
+                    maxModulus = number;
+                }
+            }
+            return maxModulus;
         }
 
         /// <summary>
