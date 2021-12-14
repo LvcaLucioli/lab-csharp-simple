@@ -50,5 +50,11 @@ namespace Calculus
             ShownValue = null;
             _firstOperand = null;
         }
+
+        public override string ToString()
+        {
+            return "value: " + (ShownValue == null ? "no value" : ShownValue.ToString())
+                + ", selected operation: " + (_selectedOperation == null ? "no operation selected" : _selectedOperation.ToString());
+        }
     }
 }
