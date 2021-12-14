@@ -27,7 +27,7 @@ namespace Calculus
         public const char OperationPlus = '+';
         public const char OperationMinus = '-';
 
-        private char? _selectedOperation = null;
+        public char? _selectedOperation = null;
         private Complex _firstOperand = null;
 
         public Complex ShownValue { get; set; }
@@ -44,12 +44,12 @@ namespace Calculus
             }
         }
 
-        private char? SelectedOperation
+        public char? SelectedOperation
         {
             get => _selectedOperation;
             set
             {
-                if(value != _selectedOperation)
+                if (value != _selectedOperation)
                 {
                     if (_firstOperand != null)
                     {
