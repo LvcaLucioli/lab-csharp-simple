@@ -91,7 +91,12 @@ namespace Arrays
         /// TODO: implement this method
         public static string ArrayToString(Complex[] array)
         {
-            return null; // TODO: remove this line
+            string finalString = "{";
+            foreach(Complex number in array)
+            {
+                finalString += "[" + number.ToString() + "];";
+            }
+            return finalString + "}"; // TODO: remove this line
         }
         
         /// <summary>
